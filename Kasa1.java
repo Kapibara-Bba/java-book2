@@ -9,9 +9,9 @@ public class Kasa1 {
       int n = Integer.parseInt(line);
       System.out.println("降水確率は" + n + "です");
       if (n >= 50) {
-        System.out.println("傘を忘れずに。");
+        System.out.println("傘は必須です。");
       } else {
-        System.out.println("傘は入りません。");
+        System.out.println("傘は不要です。");
       }
       System.out.println("いってらっしゃい。");
     } catch (IOException e) {
