@@ -15,5 +15,13 @@ public class Babanuki {
 			  card[k++] = j;
 		  }
 	  }
+
+    int a = 0;
+	  int b = 0;
+	  int x = 0;
+	  while (true) {
+		  int randomInt = (int)(Math.random());
+		  
+	  }
   }
 }
