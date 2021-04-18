@@ -50,8 +50,6 @@ public class Babanuki {
 	  
 	  List<String> play = Arrays.asList(player);
 	  List<String> playerCard = new ArrayList<>(play);
-	  List<String> comp = Arrays.asList(Com);
-	  List<String> comCard = new ArrayList<>(comp);
 	  
 	  int y = 0;
 	  int z = 1;
@@ -86,15 +84,63 @@ public class Babanuki {
 			  List<String> remove = new ArrayList<>();
 			  Collections.addAll(remove, playerCard.get(y), playerCard.get(z));
 			  playerCard.removeAll(remove);
-			  //playerCard.remove(y);
-			  //playerCard.remove(z); 
 			  z = 1;
 		  } else {
 			  System.out.print(playerCard.get(y));
 			  y++;
 			  z = 1;
 		  }
-	  }
+	 }
 	  
+	  List<String> comp = Arrays.asList(Com);
+	  List<String> comCard = new ArrayList<>(comp);
+	  
+	  int s = 0;
+	  int u = 1;
+	  String f = "0";
+	  String g = "0";
+	  String h = "0";
+	  String m = "0";
+	  
+	  for (Iterator<String> it3 = comCard.iterator(); it3.hasNext(); ) {
+		  f = comCard.get(s);
+		  if (f == null) {
+			  break;
+		  }
+		  g = f.substring(f.length() - 1);
+		  for (Iterator<String> it4 = comCard.iterator(); it4.hasNext(); ) {
+			  if (s == u) {
+				  u++;
+			  }
+			  h = comCard.get(u);
+			  if (h == null) {
+				  break;
+			  } else {
+				  m = h.substring(h.length() - 1);
+			  }
+			  
+			  if (g.equals(m)) {
+				  break;
+			  }
+			  u++;
+		  }
+		  if (g.equals(m)) {
+			  List<String> remove = new ArrayList<>();
+			  Collections.addAll(remove, comCard.get(s), comCard.get(u));
+			  comCard.removeAll(remove);
+			  u = 1;
+		  } else {
+			  s++;
+			  u = 1;
+		  }
+	 }
+	 System.out.println();
+	 
+	 int random = (int)(Math.random() * 1);
+	 if (random == 0) {
+		 playerCard.add("JK");
+	 } else {
+		 comCard.add("JK");
+	 }
   }
 }
