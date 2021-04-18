@@ -6,11 +6,11 @@ public class Babanuki {
 	  String[][] trump_card = {
 			  { "🖤A", "🖤2", "🖤3", "🖤4", "🖤5", "🖤6", "🖤7", "🖤8", "🖤9", "🖤10", "🖤J", "🖤Q", "🖤K" },
 			  { "🔷A", "🔷2", "🔷3", "🔷4", "🔷5", "🔷6", "🔷7", "🔷8", "🔷9", "🔷10", "🔷J", "🔷Q", "🔷K" },
-			  //{ "♣️A", "♣️2", "♣️3", "♣️4", "♣️5", "♣️6", "♣️7", "♣️8", "♣️️9", "♣️10", "♣️J", "♣️Q", "♣️K" },
-			  //{ "♠️A", "♠️2", "♠️3", "♠️4", "♠️5", "♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K" },
+			  { "♣️A", "♣️2", "♣️3", "♣️4", "♣️5", "♣️6", "♣️7", "♣️8", "♣️️9", "♣️10", "♣️J", "♣️Q", "♣️K" },
+			  { "♠️A", "♠️2", "♠️3", "♠️4", "♠️5", "♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K" },
 	  };
 	  
-	  String[] card = new String[26];
+	  String[] card = new String[52];
 	  
 	  int k = 0;
 	  for (String[] i : trump_card) {
@@ -20,13 +20,13 @@ public class Babanuki {
 		  }
 	  }
 	  
-	  String[] player = new String[14];
-	  String[] Com = new String[14];
+	  String[] player = new String[27];
+	  String[] Com = new String[27];
 	  int a = 2;
 	  int b = 0;
 	  int x = 0;
 	  while (true) {
-		  int randomInt = (int)(Math.random() * 26);
+		  int randomInt = (int)(Math.random() * 52);
 		  if (card[randomInt] == null) {
 			  continue;
 		  } else if (a % 2 == 0) {
@@ -42,7 +42,7 @@ public class Babanuki {
 			  a++;
 			  x++;
 		  }
-		  if (a == 28) {
+		  if (a == 54) {
 			  break;
 		  }
 	  }
@@ -53,7 +53,6 @@ public class Babanuki {
 	  List<String> comp = Arrays.asList(Com);
 	  List<String> comCard = new ArrayList<>(comp);
 	  
-	  
 	  int y = 0;
 	  int z = 1;
 	  String q = "0";
@@ -63,6 +62,9 @@ public class Babanuki {
 	  
 	  for (Iterator<String> it = playerCard.iterator(); it.hasNext(); ) {
 		  r = playerCard.get(y);
+		  if (r == null) {
+			  break;
+		  }
 		  c = r.substring(r.length() - 1);
 		  for (Iterator<String> it2 = playerCard.iterator(); it2.hasNext(); ) {
 			  if (y == z) {
@@ -81,8 +83,11 @@ public class Babanuki {
 			  z++;
 		  }
 		  if (c.equals(d)) {
-			  playerCard.remove(y);
-			  playerCard.remove(z); 
+			  List<String> remove = new ArrayList<>();
+			  Collections.addAll(remove, playerCard.get(y), playerCard.get(z));
+			  playerCard.removeAll(remove);
+			  //playerCard.remove(y);
+			  //playerCard.remove(z); 
 			  z = 1;
 		  } else {
 			  System.out.print(playerCard.get(y));
@@ -91,43 +96,5 @@ public class Babanuki {
 		  }
 	  }
 	  
-	  /*
-	  for (int p = 0; p < playerCard.size(); p++) {
-		  r = playerCard.get(y); 
-		  if (r == null ) {
-		    y++;
-		  } else {
-		    c = r.substring(r.length() - 1);
-		  }
-		  for (int t = 0; t < playerCard.size(); t++) {
-		      q = playerCard.get(z);
-			  if (q == null) {
-			    z++;
-			  } else {
-			    //System.out.println(playerCard.get(z));
-				d = q.substring(q.length() - 1); 
-			  }
-			  if (c.equals(d)) {
-				  playerCard.remove(y);
-				  playerCard.remove(t);
-				  break;
-			  } 
-			  z++;
-		  }
-		  y++;
-	  }
-	  System.out.print(playerCard.get(y));
-	  */
-	  /*
-	  for (String p : playerCard) {
-		  String c = p.substring(p.length() - 1);
-		  for (String t : playerCard) {
-			  String d = t.substring(t.length() - 1);
-			  if (c == d) {
-				  playerCard.remove(c);
-				  playerCard.remove(d);
-			  }
-		  }
-	  }*/
   }
 }
