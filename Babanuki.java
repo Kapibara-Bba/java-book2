@@ -6,11 +6,11 @@ public class Babanuki {
 	  String[][] trump_card = {
 			  { "🖤A", "🖤2", "🖤3", "🖤4", "🖤5", "🖤6", "🖤7", "🖤8", "🖤9", "🖤10", "🖤J", "🖤Q", "🖤K" },
 			  { "🔷A", "🔷2", "🔷3", "🔷4", "🔷5", "🔷6", "🔷7", "🔷8", "🔷9", "🔷10", "🔷J", "🔷Q", "🔷K" },
-			  { "♣️A", "♣️2", "♣️3", "♣️4", "♣️5", "♣️6", "♣️7", "♣️8", "♣️️9", "♣️10", "♣️J", "♣️Q", "♣️K" },
-			  { "♠️A", "♠️2", "♠️3", "♠️4", "♠️5", "♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K" },
+			  //{ "♣️A", "♣️2", "♣️3", "♣️4", "♣️5", "♣️6", "♣️7", "♣️8", "♣️️9", "♣️10", "♣️J", "♣️Q", "♣️K" },
+			  //{ "♠️A", "♠️2", "♠️3", "♠️4", "♠️5", "♠️6", "♠️7", "♠️8", "♠️9", "♠️10", "♠️J", "♠️Q", "♠️K" },
 	  };
 	  
-	  String[] card = new String[52];
+	  String[] card = new String[26];
 	  
 	  int k = 0;
 	  for (String[] i : trump_card) {
@@ -20,13 +20,13 @@ public class Babanuki {
 		  }
 	  }
 	  
-	  String[] player = new String[27];
-	  String[] Com = new String[27];
+	  String[] player = new String[14];
+	  String[] Com = new String[14];
 	  int a = 2;
 	  int b = 0;
 	  int x = 0;
 	  while (true) {
-		  int randomInt = (int)(Math.random() * 52);
+		  int randomInt = (int)(Math.random() * 26);
 		  if (card[randomInt] == null) {
 			  continue;
 		  } else if (a % 2 == 0) {
@@ -42,7 +42,7 @@ public class Babanuki {
 			  a++;
 			  x++;
 		  }
-		  if (a == 54) {
+		  if (a == 28) {
 			  break;
 		  }
 	  }
@@ -61,13 +61,16 @@ public class Babanuki {
 	  String c = "0";
 	  String d = "0";
 	  
-	  myLabel:for (Iterator<String> it = playerCard.iterator(); it.hasNext(); ) {
+	  for (Iterator<String> it = playerCard.iterator(); it.hasNext(); ) {
 		  r = playerCard.get(y);
 		  c = r.substring(r.length() - 1);
 		  for (Iterator<String> it2 = playerCard.iterator(); it2.hasNext(); ) {
+			  if (y == z) {
+				  z++;
+			  }
 			  q = playerCard.get(z);
 			  if (q == null) {
-				  break myLabel;
+				  break;
 			  } else {
 				  d = q.substring(q.length() - 1);
 			  }
@@ -82,8 +85,9 @@ public class Babanuki {
 			  playerCard.remove(z); 
 			  z = 1;
 		  } else {
-			  System.out.print(y);
+			  System.out.print(playerCard.get(y));
 			  y++;
+			  z = 1;
 		  }
 	  }
 	  
