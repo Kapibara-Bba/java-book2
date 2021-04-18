@@ -49,9 +49,35 @@ public class Babanuki {
 	  List<String> comp = Arrays.asList(Com);
 	  List<String> comCard = new ArrayList<>(comp);
 	  
+	  int y = 0;
+	  int z = 1;
+	  for (int p = 0; p < playerCard.size(); p++) {
+		  String r = Integer.toString(p);
+		  playerCard.set(y, r);
+		  String c = r.substring(r.length() - 1);
+		  for (int t = 0; t < playerCard.size(); t++) {
+			  String q = Integer.toString(t);
+			  playerCard.set(z, q);
+			  String d = q.substring(q.length() - 1);
+			  if (c == d) {
+				  playerCard.remove(c);
+				  playerCard.remove(d);
+			  }
+		  }
+	  }
+	  System.out.println(playerCard);
+	  
+	  
+	  /*
 	  for (String p : playerCard) {
 		  String c = p.substring(p.length() - 1);
-		  
-	  }
+		  for (String t : playerCard) {
+			  String d = t.substring(t.length() - 1);
+			  if (c == d) {
+				  playerCard.remove(c);
+				  playerCard.remove(d);
+			  }
+		  }
+	  }*/
   }
 }
