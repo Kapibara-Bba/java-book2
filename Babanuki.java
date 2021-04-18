@@ -30,6 +30,7 @@ public class Babanuki {
 		  } else if (a % 2 == 0) {
 			  player[b] = card[randomInt];
 			  System.out.print(player[b]);
+			  
 			  card[randomInt] = null;
 			  a++;
 			  b++;
@@ -43,31 +44,41 @@ public class Babanuki {
 			  break;
 		  }
 	  }
+	  System.out.println();
 	  
 	  List<String> play = Arrays.asList(player);
 	  List<String> playerCard = new ArrayList<>(play);
 	  List<String> comp = Arrays.asList(Com);
 	  List<String> comCard = new ArrayList<>(comp);
 	  
+	  
 	  int y = 0;
 	  int z = 1;
+	  String q = "0";
+	  String r = "0";
+	  String c = "0";
+	  String d = "0";
+	  
+	  
+	  /*
 	  for (int p = 0; p < playerCard.size(); p++) {
-		  String r = Integer.toString(p);
-		  playerCard.set(y, r);
-		  String c = r.substring(r.length() - 1);
+		  r = playerCard.get(y); 
+		  c = r.substring(r.length() - 1);
 		  for (int t = 0; t < playerCard.size(); t++) {
-			  String q = Integer.toString(t);
-			  playerCard.set(z, q);
-			  String d = q.substring(q.length() - 1);
-			  if (c == d) {
-				  playerCard.remove(c);
-				  playerCard.remove(d);
-			  }
+			     q = playerCard.get(z);
+			  //System.out.println(playerCard.get(z));
+				 d = q.substring(q.length() - 1); 
+			  if (c.equals(d)) {
+				  playerCard.remove(y);
+				  playerCard.remove(t);
+				  break;
+			  } 
+			  z++;
 		  }
+		  y++;
 	  }
-	  System.out.println(playerCard);
-	  
-	  
+	  System.out.print(playerCard.get(y));
+	  */
 	  /*
 	  for (String p : playerCard) {
 		  String c = p.substring(p.length() - 1);
