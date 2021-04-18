@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Babanuki {
   public static void main(String[] args) {
 	  System.out.println("ゲームを始めます");
@@ -59,15 +61,48 @@ public class Babanuki {
 	  String c = "0";
 	  String d = "0";
 	  
+	  myLabel:for (Iterator<String> it = playerCard.iterator(); it.hasNext(); ) {
+		  r = playerCard.get(y);
+		  c = r.substring(r.length() - 1);
+		  for (Iterator<String> it2 = playerCard.iterator(); it2.hasNext(); ) {
+			  q = playerCard.get(z);
+			  if (q == null) {
+				  break myLabel;
+			  } else {
+				  d = q.substring(q.length() - 1);
+			  }
+			  
+			  if (c.equals(d)) {
+				  break;
+			  }
+			  z++;
+		  }
+		  if (c.equals(d)) {
+			  playerCard.remove(y);
+			  playerCard.remove(z); 
+			  z = 1;
+		  } else {
+			  System.out.print(y);
+			  y++;
+		  }
+	  }
 	  
 	  /*
 	  for (int p = 0; p < playerCard.size(); p++) {
 		  r = playerCard.get(y); 
-		  c = r.substring(r.length() - 1);
+		  if (r == null ) {
+		    y++;
+		  } else {
+		    c = r.substring(r.length() - 1);
+		  }
 		  for (int t = 0; t < playerCard.size(); t++) {
-			     q = playerCard.get(z);
-			  //System.out.println(playerCard.get(z));
-				 d = q.substring(q.length() - 1); 
+		      q = playerCard.get(z);
+			  if (q == null) {
+			    z++;
+			  } else {
+			    //System.out.println(playerCard.get(z));
+				d = q.substring(q.length() - 1); 
+			  }
 			  if (c.equals(d)) {
 				  playerCard.remove(y);
 				  playerCard.remove(t);
