@@ -34,15 +34,15 @@ public class PointInquiry {
 	    List<String> goodsInquiryItem2 = new ArrayList<String>();
 	    List<String> goodsInquiryItem3 = new ArrayList<String>();
 
-	    int count = 13;
+	    int count = goodsInquiryItem.size();
 	    int pages = (int)Math.ceil(count / 9);
 
-	    for (int i = 0; i < pages; i++) {
-	      int n = 9 * 1;
-	      for (int j = n; j < 3; j++) {
-	    	  goodsInquiryItem1.add(goodsInquiryItem.get(i));
-	    	  goodsInquiryItem2.add(goodsInquiryItem.get(i + 3));
-	    	  goodsInquiryItem3.add(goodsInquiryItem.get(i + 6));
+	    for (int i = 0; i <= pages; i++) {
+	      int n = 9 * i;
+	      for (int j = n; j < n + 3; j++) {
+	    	  goodsInquiryItem1.add(goodsInquiryItem.get(j));
+	    	  goodsInquiryItem2.add(goodsInquiryItem.get(j + 3));
+	    	  goodsInquiryItem3.add(goodsInquiryItem.get(j + 6));
 	      }
 	    }
 
@@ -50,6 +50,6 @@ public class PointInquiry {
 	    System.out.println(goodsInquiryItem2);
 	    System.out.println(goodsInquiryItem3);
 	  }
-	
-	
+
+
 }
