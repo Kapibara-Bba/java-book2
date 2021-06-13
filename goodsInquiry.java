@@ -39,17 +39,21 @@ public class PointInquiry {
 
 	    for (int i = 0; i <= pages; i++) {
 	      int n = 9 * i;
-	      for (int j = n; j < n + 3; j++) {
+	      for (int j = n; j < n + 3 && j < count; j++) {
 	    	  goodsInquiryItem1.add(goodsInquiryItem.get(j));
-	    	  goodsInquiryItem2.add(goodsInquiryItem.get(j + 3));
-	    	  goodsInquiryItem3.add(goodsInquiryItem.get(j + 6));
+	    	  if (j + 3 < count) {
+	    		  goodsInquiryItem2.add(goodsInquiryItem.get(j + 3));
+	    	  }
+	    	  if (j + 6 < count) {
+	    		  goodsInquiryItem3.add(goodsInquiryItem.get(j + 6));	    		  
+	    	  }
 	      }
 	    }
 
-	    System.out.println(goodsInquiryItem1);
-	    System.out.println(goodsInquiryItem2);
-	    System.out.println(goodsInquiryItem3);
-	  }
+	    System.out.print(goodsInquiryItem1);
+	    System.out.print(goodsInquiryItem2);
+	    System.out.print(goodsInquiryItem3);
+	}
 
 
 }
