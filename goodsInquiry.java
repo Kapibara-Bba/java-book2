@@ -29,6 +29,12 @@ public class PointInquiry {
 	    goodsInquiryItem.add("s");
 	    goodsInquiryItem.add("t");
 	    goodsInquiryItem.add("u");
+	    goodsInquiryItem.add("v");
+	    goodsInquiryItem.add("w");
+	    goodsInquiryItem.add("x");
+	    goodsInquiryItem.add("y");
+	    goodsInquiryItem.add("z");
+
 
 	    List<String> goodsInquiryItem1 = new ArrayList<String>();
 	    List<String> goodsInquiryItem2 = new ArrayList<String>();
@@ -45,14 +51,14 @@ public class PointInquiry {
 	    		  goodsInquiryItem2.add(goodsInquiryItem.get(j + 3));
 	    	  }
 	    	  if (j + 6 < count) {
-	    		  goodsInquiryItem3.add(goodsInquiryItem.get(j + 6));	    		  
+	    		  goodsInquiryItem3.add(goodsInquiryItem.get(j + 6));
 	    	  }
 	      }
 	    }
 
-	    System.out.print(goodsInquiryItem1);
-	    System.out.print(goodsInquiryItem2);
-	    System.out.print(goodsInquiryItem3);
+	    System.out.println(goodsInquiryItem1);
+	    System.out.println(goodsInquiryItem2);
+	    System.out.println(goodsInquiryItem3);
 	}
 
 
