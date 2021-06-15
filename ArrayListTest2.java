@@ -10,12 +10,26 @@ public class ArrayListTest2 {
 
     list.add("Diana");
     list.add("Elmo");
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.add("d");
+    list.add("e");
+    list.add("f");
+    list.add("g");
 
     List<String> lists = new ArrayList<String>();
+    List<String> lists2 = new ArrayList<String>();
+    List<String> lists3 = new ArrayList<String>();
 
-    for (int i = 0; i < list.size(); i++) {
-      lists.add(list.get(i));
+    for (int j = 0; j < 1; j++) {
+      for (int i = 0; i < 3; i++) {
+        lists.add(list.get(i));
+        lists2.add(list.get(i + 3));
+        lists3.add(list.get(i + 6));
+      }
     }
+
     System.out.println(lists);
   }
 }
