@@ -10,13 +10,6 @@ public class ArrayListTest2 {
 
     list.add("Diana");
     list.add("Elmo");
-    list.add("a");
-    list.add("b");
-    list.add("c");
-    list.add("d");
-    list.add("e");
-    list.add("f");
-    list.add("g");
 
     List<String> lists = new ArrayList<String>();
     List<String> lists2 = new ArrayList<String>();
